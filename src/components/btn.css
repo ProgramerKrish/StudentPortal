@@ -1,0 +1,21 @@
+:root{
+    --mint-color: #3BBA9C;
+    --mint-hover-color: #43f7cd;
+    --bg-color:#2f3144;
+    --bg-hover-color:#393d61;
+}
+.btn{
+    all:unset;
+    padding: 4px 16px;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: var(--mint-color);
+    cursor: pointer;
+    background-color:#2f3144;
+    transition: background-color 0.2s ease, color 0.2s ease ,transform 0.2s ease;
+}
+
+.btn:hover{
+    
+    color: var(--mint-hover-color);
+}

@@ -1,0 +1,82 @@
+
+
+.register-page , .signin-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap:1rem;
+  background-color: #707793;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+  color: #3BBA9C;
+}
+
+.register-form ,.signin-form{
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  max-width: 90%;
+  /* min-height: 60vh; */ 
+  padding: 1rem;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: #4e516b;
+}
+.form-fileds-master-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.email-form-feild , .password-form-field , .confirm-password-field {
+  display: flex;
+  flex-direction: column;
+  color: #3BBA9C;
+  min-width: 100%;
+  min-height: 20%;
+}
+
+.buttons-field{
+  display: flex;
+  flex-direction:column ;
+  justify-content:center;
+  align-items: center;
+}
+
+.buttons-field > button{
+  all: unset;
+  padding:4px 16px;
+  cursor: pointer;
+  color:#46cbac;
+  background-color:#2f3144;
+  font-weight: bolder;
+  border-radius: 8px;
+}
+
+.buttons-field > a{
+  color:#3BBA9C;
+  text-decoration: none;  
+  font-size: smaller;
+}
+
+input {
+  all:unset; 
+  background-color: #2f3144;
+  color: #ffffff;
+  border: 1px solid transparent;
+  margin: 2px;
+  padding: 4px ;
+  border-radius: 4px; 
+}
+
+ input::placeholder {
+  color: #9fa3c8;
+  font-size: smaller;
+}
