@@ -3,7 +3,7 @@ export default function Btn({
     children,
     type="button",
     onClick,
-    disabled=false
+    disabled
 }){
 
     return (
