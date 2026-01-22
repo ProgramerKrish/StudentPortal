@@ -1,13 +1,20 @@
 import { useState } from "react"
 import { useId } from "react"
+import { useNavigate } from "react-router-dom"
 import Btn from "../components/btn"
 import InputFeild from "../components/input"
-export default function Signin(){
+export default function Signin({setIsAuthenticated}){
+    const navigate=useNavigate()
     const email=useId()
     const password=useId()
     const [emailval,setEmail]=useState("")
     const [passwordval,setPasswordval]=useState("")
     const isDisabled= !emailval || !passwordval;
+    function handelLogin(e){
+        e.preventDefault()
+        setIsAuthenticated(true)
+        navigate("/dashboard")
+    }
 return(
     <article className="signin-page">
         <div className="heading"><h1>Sign in</h1></div>
@@ -25,7 +32,7 @@ return(
             </div>
             <div className="buttons-field">
             
-            <Btn type="submit" disabled={isDisabled}>Sign-in</Btn>
+            <Btn type="submit" disabled={isDisabled} onClick={handelLogin}>Sign-in</Btn>
             </div>
             </div>
         </form>
