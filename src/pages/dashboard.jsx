@@ -1,9 +1,7 @@
-import { Navigate } from "react-router-dom"
+import { useEffect } from "react"
 
-export default function DashBoard({isAuthenticated}){
-    
-    if(!isAuthenticated){ return <Navigate to="/signin" /> }
+export default function DashBoard(){
+      
     return(
-        
         <h1>hello gys</h1>
     )}

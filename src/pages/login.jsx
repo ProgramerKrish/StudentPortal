@@ -12,6 +12,7 @@ export default function Signin({setIsAuthenticated}){
     const isDisabled= !emailval || !passwordval;
     function handelLogin(e){
         e.preventDefault()
+        localStorage.setItem("auth","true")
         setIsAuthenticated(true)
         navigate("/dashboard")
     }
