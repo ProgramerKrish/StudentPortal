@@ -3,7 +3,9 @@ import { useId } from "react"
 import { useNavigate } from "react-router-dom"
 import Btn from "../components/btn"
 import InputFeild from "../components/input"
-export default function Signin({setIsAuthenticated}){
+import { useAuth } from "../context/AuthContext"
+export default function Signin(){
+    const {login }= useAuth()
     const navigate=useNavigate()
     const email=useId()
     const password=useId()
@@ -12,8 +14,7 @@ export default function Signin({setIsAuthenticated}){
     const isDisabled= !emailval || !passwordval;
     function handelLogin(e){
         e.preventDefault()
-        localStorage.setItem("auth","true")
-        setIsAuthenticated(true)
+        login()
         navigate("/dashboard")
     }
 return(

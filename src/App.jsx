@@ -7,14 +7,12 @@ import ProtectedRoute from "./components/protectedRoute.jsx"
 import Loader from "./components/loader.jsx"
 import "./Authstyle.css"
 import "../src/styles/global.css"
+import { useAuth } from "./context/AuthContext.jsx"
 
 export default function App(){
 
-  const [isAuthenticated,setIsAuthenticated]=useState(null)
-  useEffect(()=>{
-    const savedAuth=localStorage.getItem("auth")
-    setIsAuthenticated(savedAuth==="true")
-  },[]);
+  const {isAuthenticated}=useAuth()
+
 
   if(isAuthenticated===null){
     return <Loader/>
@@ -22,9 +20,9 @@ export default function App(){
   return(
     <Routes>
       <Route path="/" element={<Register/>}></Route> 
-      <Route path="/signin" element={<Signin setIsAuthenticated={setIsAuthenticated}/>} ></Route> 
+      <Route path="/signin" element={<Signin />} ></Route> 
       <Route path="/dashboard" element={
-        <ProtectedRoute isAuthenticated={isAuthenticated}><DashBoard  /> </ProtectedRoute>}></Route>
+        <ProtectedRoute ><DashBoard  /> </ProtectedRoute>}></Route>
     </Routes>
   )
 }
