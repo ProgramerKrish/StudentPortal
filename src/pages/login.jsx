@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom"
 import Btn from "../components/btn"
 import InputFeild from "../components/input"
 import { useAuth } from "../context/AuthContext"
+
 export default function Signin(){
+    
     const {login }= useAuth()
     const navigate=useNavigate()
     const email=useId()
