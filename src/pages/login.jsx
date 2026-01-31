@@ -14,15 +14,43 @@ export default function Signin(){
     const [emailval,setEmail]=useState("")
     const [passwordval,setPasswordval]=useState("")
     const isDisabled= !emailval || !passwordval;
-    function handelLogin(e){
+
+
+
+   
+
+    async function handelLogin(e){
         e.preventDefault()
-        login()
-        navigate("/dashboard")
+
+        try{
+            const res = await fetch ("https://jsonplaceholde.typicode.com/posts",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    email:emailval,
+                    password:passwordval,
+                    userId:1
+                })
+            })
+            if(!res.ok){
+                throw new Error("Login-failed")
+            }
+            const data = await res.json()
+            console.log(data)
+            login()
+            navigate("/dashboard")
+        }
+        catch(err){
+            console.log(err)
+            alert("login failed")
+
+        }
     }
+
 return(
     <article className="signin-page">
         <div className="heading"><h1>Sign in</h1></div>
-        <form  className="signin-form">
+        <form  className="signin-form" onSubmit={handelLogin}>
             <div className="form-fileds-master-container">
             <div className="email-form-feild">
             <label htmlFor={email} className="signin-email">Email</label>
@@ -36,7 +64,7 @@ return(
             </div>
             <div className="buttons-field">
             
-            <Btn type="submit" disabled={isDisabled} onClick={handelLogin}>Sign-in</Btn>
+            <Btn type="submit" disabled={isDisabled} >Sign-in</Btn>
             </div>
             </div>
         </form>
