@@ -2,25 +2,10 @@ import { useAuth } from "../context/AuthContext"
 import { useEffect,useState } from "react"
 import Btn from "../components/btn"
 import Loader from "../components/loader.jsx"
+import ProfileCard from "../components/profileCard.jsx"
 export default function DashBoard(){
     const [posts,setPosts]=useState([])
     const [loading,setLoading]=useState(true)
-
-    /* useEffect(()=>{
-        fetch("https://jsonplaceholder.typicode.com/users")
-        .then(res=>res.json())
-        .then(data=>setUsers(data))
-    },[]) 
-
-    useEffect(()=>{
-        async function loadUsers(){
-            const res = await fetch("https://jsonplaceholder.typicode.com/users")
-            const data = await res.json()
-            setUsers(data)
-        }
-        loadUsers();
-    },[]) */
-
     useEffect(()=>{
         try{
         async function loadPosts(){
@@ -38,6 +23,12 @@ export default function DashBoard(){
     return(
         <>
         <h1>users</h1>
+        <ProfileCard 
+        name="krish"
+        dept="AI&DS"
+        batch="2024-28"
+        role="student"
+        />
         {loading?<Loader/>:posts.map(post=>(<p key={post.id}>{post.title}</p>))}
         <Btn onClick={logout}>logout</Btn>
         </>

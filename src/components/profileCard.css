@@ -1,0 +1,39 @@
+.profile-card{
+    border: 2px solid red;
+    margin: 0.5rem;
+}
+
+.master-container{
+    background-color: red;
+    border: 2px solid green;
+    margin: 0.5rem;
+}
+
+.master-content-holder{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    margin: 2px solid black;
+    margin: 0.5rem;
+}
+
+.image-holder{
+    width:fit-content;
+    background-color: pink;
+    
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.content-holder{
+    background-color: blue;
+    width:100%;
+}
+
+.profile-content{
+    background-color: blueviolet;
+}
+
+.status{
+    background-color: brown;
+}
